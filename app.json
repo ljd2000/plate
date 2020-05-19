@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/plate/plate",
+    "components/vehicle-panel/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0094ff",
+    "navigationBarTitleText": "查车牌",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
