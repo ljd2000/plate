@@ -1,0 +1,46 @@
+<!-- 1、第一行图片 -->
+<view>
+    <image src="../../images/huayuan.png" mode="widthFix">        
+    </image>
+</view>
+<!-- 2、拍照识别 方式 -->
+<view class="" hover-class="none">1、拍照智能识别检验车牌</view>
+<view class="container">
+    <button class='btn1'>
+        <image class='btnImg' src='../../icons/find.png' ></image>
+        <view>拍照识别</view> 
+    </button>
+    (未开放)
+</view>
+<!-- 3、手工输入 方式 -->
+<view class="" hover-class="none">2、请在下方输入车牌号：</view>
+<view class="container">
+    <view class="input-section">       
+        <view class="box">
+            <view ><input disabled class="box1" maxlength="1" bindtap="open1" style="font-size:20pt" value="{{territory}}"></input></view>
+            <view class="box2">            
+                <input disabled name="plate" size="20pt" style="font-weight: bold" bindtap="open2" maxlength="{{maxlength}}" bindinput="getInputValue" class="input-text" value="{{plate}}" />
+            </view>
+        </view>
+        <button class='btn2' disabled="{{buttonClicked}}" size="default" bindtap="btnClick">手查车牌</button>
+    </view>
+</view>
+<!-- 4、查牌结果 -->
+<view id="flag1" hidden="{{flag1}}" > 
+    <view style="color:blue">查牌结果：小区车</view>
+    <view class="result">
+        【{{territory}}{{plate}}】车牌为 {{building}}栋{{owner}} 车牌
+    </view>
+</view>
+<view id="flag2" hidden="{{flag2}}" > 
+    <view style="color:blue">查牌结果：外部车</view>
+    <view class="result">
+       【{{territory}}{{plate}}】车牌为  {{owner}}车牌     
+    </view>
+</view>
+<view id="flag3" hidden="{{flag3}}" > 
+    <view style="color:blue">查牌结果：未知车牌</view>
+    <view class="result">
+        【{{territory}}{{plate}}】车牌为 外来车牌 ,或 输入有误
+    </view>
+</view><v-panel is-show="{{isShow}}" bindok="inputOk" binddelete="delete" bindinputchange="click" bindok="ok" key-board-type="{{keyBoardType}}" backgroundColor="white" />
